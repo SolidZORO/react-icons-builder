@@ -15,7 +15,8 @@ const camelcase = require('camelcase');
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 
-const argv = { beta: false, channel: '', ...yargs(hideBin(process.argv)).argv };
+const argv = { src: '', dist: '', ...yargs(hideBin(process.argv)).argv };
+// console.log('ARGV', argv);
 
 if (!argv.src || !argv.dist) {
   console.error('⚠️  Missing argv `--src` or `--dist`');
@@ -23,10 +24,11 @@ if (!argv.src || !argv.dist) {
   return;
 }
 
-const { icons } = require(argv.src);
+const CWD_DIR = process.cwd();
+const SRC_DIR = path.resolve(CWD_DIR, argv.src);
+const DIST_DIR = path.resolve(CWD_DIR, argv.dist);
 
-const ROOT_DIR = path.resolve(__dirname, './');
-const DIST_DIR = path.resolve(ROOT_DIR, argv.dist);
+const { icons } = require(SRC_DIR);
 
 async function getIconFiles(content) {
   return glob(content.files);

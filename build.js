@@ -2,7 +2,6 @@
 
 /*
  eslint-disable
-
  file fork by https://github.com/react-icons/react-icons/blob/master/packages/react-icons/scripts/logics.js
 */
 const cheerio = require('cheerio');
@@ -126,9 +125,6 @@ async function dirInit() {
   const write = (filePath, str) =>
     writeFile(path.resolve(DIST_DIR, ...filePath), str, 'utf8').catch(ignore);
 
-  // const initFiles = ['index.d.ts', 'index.esm.js', 'index.js', 'all.js', 'all.d.ts'];
-  // const initFiles = ['index.d.ts', 'index.esm.js', 'index.js'];
-
   for (const icon of icons) {
     await mkdir(path.resolve(DIST_DIR, icon.id)).catch(ignore);
 
@@ -156,10 +152,6 @@ async function dirInit() {
       )}\n`,
     );
   }
-
-  // for (const file of initFiles) {
-  //   await write([file], '// THIS FILE IS AUTO GENERATED\n');
-  // }
 }
 
 async function writeIconModule(icon) {
@@ -198,7 +190,10 @@ async function main() {
     for (const icon of icons) {
       await writeIconModule(icon);
     }
-    console.log(`\n✅  ${icons.length} Icons Build at >>>> ${DIST_DIR}\n`);
+
+    console.log(`\n\n✅  Icons Build Successfully >>>> ${DIST_DIR}\n`);
+    console.log(icons);
+    console.log('\n');
   } catch (e) {
     console.error(e);
   }

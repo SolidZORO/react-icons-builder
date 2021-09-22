@@ -1,18 +1,11 @@
 {
   "name": "react-icons-builder",
-  "version": "0.0.0",
+  "description": "react-icons-builder",
+  "version": "0.0.1",
   "main": "build.js",
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
-  "description": "react-icons-builder",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SolidZORO/next-plugin-antd-less/issues"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "dependencies": {
     "camelcase": "^5.0.0",
     "cheerio": "^1.0.0-rc.2",

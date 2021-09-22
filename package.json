@@ -6,15 +6,10 @@
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
   "license": "MIT",
-  "dependencies": {
-    "camelcase": "^5.0.0",
-    "cheerio": "^1.0.0-rc.2",
-    "glob": "^7.1.7",
-    "glob-promise": "^3.4.0",
-    "svgo": "^1.3.2",
-    "yargs": "^17.1.1"
-  },
   "homepage": "https://github.com/SolidZORO/react-icons-builder",
+  "bin": {
+    "react-icons-builder": "./build.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/SolidZORO/react-icons-builder.git"
@@ -36,6 +31,14 @@
     "release": "npm publish --dist-tag",
     "-------------------------------- PROD ----": "----",
     "build": "node build.js --src __test__/ti --dist __test__/react-icons-ext"
+  },
+  "dependencies": {
+    "camelcase": "^5.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "glob": "^7.1.7",
+    "glob-promise": "^3.4.0",
+    "svgo": "^1.3.2",
+    "yargs": "^17.1.1"
   },
   "keywords": [
     "react",
